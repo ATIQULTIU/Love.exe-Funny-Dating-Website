@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Love.exe ❤️ | Funny Dating</title>
+  <meta
+    name="description"
+    content="A funny dating website where love meets questionable compatibility."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Floating background hearts -->
+  <div class="floating-hearts" aria-hidden="true">
+    <span>❤️</span>
+    <span>💕</span>
+    <span>💘</span>
+    <span>💖</span>
+    <span>💗</span>
+    <span>💝</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+
+      <a href="#" class="logo" onclick="showHome()">
+        Love<span>.exe</span> ❤️
+      </a>
+
+      <nav id="navMenu">
+        <a href="#discover">Discover</a>
+        <a href="#matches">Matches</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <button
+        class="theme-button"
+        id="themeButton"
+        onclick="toggleTheme()"
+        aria-label="Toggle theme"
+      >
+        🌙
+      </button>
+
+      <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="badge">
+          🚨 100% scientifically questionable
+        </div>
+
+        <h1>
+          Find your
+          <span>almost</span>
+          perfect match. 💘
+        </h1>
+
+        <p>
+          Dating is difficult. So we made an algorithm that is
+          slightly less reliable than your friend's advice.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="primary-button" onclick="scrollToDiscover()">
+            Find My Match ❤️
+          </button>
+
+          <button class="secondary-button" onclick="randomMatch()">
+            Surprise Me 🎲
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong id="userCount">10,248</strong>
+            <span>Lonely-ish users</span>
+          </div>
+
+          <div>
+            <strong>97%</strong>
+            <span>Awkward first dates</span>
+          </div>
+
+          <div>
+            <strong>∞</strong>
+            <span>Bad pickup lines</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-card-wrapper">
+
+        <div class="heart-orbit heart-one">❤️</div>
+        <div class="heart-orbit heart-two">💘</div>
+        <div class="heart-orbit heart-three">💕</div>
+
+        <div class="hero-profile">
+
+          <div class="profile-photo hero-photo">
+            😎
+          </div>
+
+          <div class="online-dot"></div>
+
+          <div class="hero-profile-info">
+            <h3>Definitely Not A Bot</h3>
+            <p>24 • Somewhere on Earth 🌍</p>
+          </div>
+
+          <div class="compatibility">
+            <span>Compatibility</span>
+            <strong>99%</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Discover -->
+    <section class="section" id="discover">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-label">DISCOVER</span>
+          <h2>People you might tolerate. 😌</h2>
+          <p>
+            Our advanced algorithm analyzed absolutely nothing.
+            Good luck!
+          </p>
+        </div>
+
+        <button class="refresh-button" onclick="shuffleProfiles()">
+          🔄 Shuffle
+        </button>
+
+      </div>
+
+      <div class="filter-bar">
+
+        <button class="filter active" data-filter="all">
+          ✨ Everyone
+        </button>
+
+        <button class="filter" data-filter="funny">
+          😂 Funny
+        </button>
+
+        <button class="filter" data-filter="foodie">
+          🍕 Foodies
+        </button>
+
+        <button class="filter" data-filter="gaming">
+          🎮 Gamers
+        </button>
+
+        <button class="filter" data-filter="travel">
+          ✈️ Travelers
+        </button>
+
+      </div>
+
+      <div class="profiles-grid" id="profilesGrid">
+
+        <!-- Profile 1 -->
+        <article
+          class="profile-card"
+          data-category="funny"
+          data-name="Maya"
+        >
+
+          <div class="card-image pink-gradient">
+            <div class="avatar">👩🏻‍🦰</div>
+
+            <span class="verified">✓ Verified-ish</span>
+
+            <span class="online">● Online</span>
+
+            <button
+              class="heart-button"
+              onclick="likeProfile(this, 'Maya')"
+              aria-label="Like Maya"
+            >
+              ♡
+            </button>
+          </div>
+
+          <div class="card-body">
+
+            <div class="name-row">
+              <h3>Maya, 25</h3>
+              <span>📍 3 km</span>
+            </div>
+
+            <p class="job">☕ Professional Coffee Consumer</p>
+
+            <p class="bio">
+              I don't chase people. Unless they're carrying pizza.
+              🍕
+            </p>
+
+            <div class="tags">
+              <span>😂 Memes</span>
+              <span>☕ Coffee</span>
+              <span>🎬 Netflix</span>
+            </div>
+
+            <div class="match-row">
+              <span>🔥 Match potential</span>
+              <strong>94%</strong>
+            </div>
+
+            <div class="progress">
+              <div style="width:94%"></div>
+            </div>
+
+            <button
+              class="match-button"
+              onclick="sendLike('Maya')"
+            >
+              💘 Send Like
+            </button>
+
+          </div>
+        </article>
+
+
+        <!-- Profile 2 -->
+        <article
+          class="profile-card"
+          data-category="gaming"
+          data-name="Alex"
+        >
+
+          <div class="card-image blue-gradient">
+            <div class="avatar">🧑🏻‍💻</div>
+
+            <span class="verified">✓ Verified-ish</span>
+
+            <button
+              class="heart-button"
+              onclick="likeProfile(this, 'Alex')"
+              aria-label="Like Alex"
+            >
+              ♡
+            </button>
+          </div>
+
+          <div class="card-body">
+
+            <div class="name-row">
+              <h3>Alex, 27</h3>
+              <span>📍 5 km</span>
+            </div>
+
+            <p class="job">🎮 Full-Time Gamer</p>
+
+            <p class="bio">
+              Looking for someone who understands that "one more game"
+              means three more hours.
+            </p>
+
+            <div class="tags">
+              <span>🎮 Gaming</span>
+              <span>🍔 Burgers</span>
+              <span>🐱 Cats</span>
+            </div>
+
+            <div class="match-row">
+              <span>🔥 Match potential</span>
+              <strong>87%</strong>
+            </div>
+
+            <div class="progress">
+              <div style="width:87%"></div>
+            </div>
+
+            <button
+              class="match-button"
+              onclick="sendLike('Alex')"
+            >
+              💘 Send Like
+            </button>
+
+          </div>
+        </article>
+
+
+        <!-- Profile 3 -->
+        <article
+          class="profile-card"
+          data-category="foodie"
+          data-name="Sofia"
+        >
+
+          <div class="card-image orange-gradient">
+            <div class="avatar">👩🏻</div>
+
+            <span class="verified">✓ Verified-ish</span>
+
+            <span class="online">● Online</span>
+
+            <button
+              class="heart-button"
+              onclick="likeProfile(this, 'Sofia')"
+              aria-label="Like Sofia"
+            >
+              ♡
+            </button>
+          </div>
+
+          <div class="card-body">
+
+            <div class="name-row">
+              <h3>Sofia, 26</h3>
+              <span>📍 8 km</span>
+            </div>
+
+            <p class="job">🍜 Food Explorer</p>
+
+            <p class="bio">
+              My love language is sending you restaurant reels
+              at 2 AM.
+            </p>
+
+            <div class="tags">
+              <span>🍜 Food</span>
+              <span>✈️ Travel</span>
+              <span>📸 Photos</span>
+            </div>
+
+            <div class="match-row">
+              <span>🔥 Match potential</span>
+              <strong>91%</strong>
+            </div>
+
+            <div class="progress">
+              <div style="width:91%"></div>
+            </div>
+
+            <button
+              class="match-button"
+              onclick="sendLike('Sofia')"
+            >
+              💘 Send Like
+            </button>
+
+          </div>
+        </article>
+
+
+        <!-- Profile 4 -->
+        <article
+          class="profile-card"
+          data-category="travel"
+          data-name="Ryan"
+        >
+
+          <div class="card-image purple-gradient">
+            <div class="avatar">🧔🏻</div>
+
+            <span class="verified">✓ Verified-ish</span>
+
+            <button
+              class="heart-button"
+              onclick="likeProfile(this, 'Ryan')"
+              aria-label="Like Ryan"
+            >
+              ♡
+            </button>
+          </div>
+
+          <div class="card-body">
+
+            <div class="name-row">
+              <h3>Ryan, 29</h3>
+              <span>📍 12 km</span>
+            </div>
+
+            <p class="job">✈️ Weekend Adventurer</p>
+
+            <p class="bio">
+              I have a passport and absolutely no idea where
+              I'm going next.
+            </p>
+
+            <div class="tags">
+              <span>✈️ Travel</span>
+              <span>🏕️ Nature</span>
+              <span>🎵 Music</span>
+            </div>
+
+            <div class="match-row">
+              <span>🔥 Match potential</span>
+              <strong>82%</strong>
+            </div>
+
+            <div class="progress">
+              <div style="width:82%"></div>
+            </div>
+
+            <button
+              class="match-button"
+              onclick="sendLike('Ryan')"
+            >
+              💘 Send Like
+            </button>
+
+          </div>
+        </article>
+
+
+        <!-- Profile 5 -->
+        <article
+          class="profile-card"
+          data-category="funny"
+          data-name="Emma"
+        >
+
+          <div class="card-image green-gradient">
+            <div class="avatar">👩🏼</div>
+
+            <span class="verified">✓ Verified-ish</span>
+
+            <span class="online">● Online</span>
+
+            <button
+              class="heart-button"
+              onclick="likeProfile(this, 'Emma')"
+              aria-label="Like Emma"
+            >
+              ♡
+            </button>
+          </div>
+
+          <div class="card-body">
+
+            <div class="name-row">
+              <h3>Emma, 24</h3>
+              <span>📍 2 km</span>
+            </div>
+
+            <p class="job">😂 Meme Researcher</p>
+
+            <p class="bio">
+              If you can make me laugh, congratulations.
+              You have passed level one.
+            </p>
+
+            <div class="tags">
+              <span>😂 Memes</span>
+              <span>🐶 Dogs</span>
+              <span>🎧 Music</span>
+            </div>
+
+            <div class="match-row">
+              <span>🔥 Match potential</span>
+              <strong>96%</strong>
+            </div>
+
+            <div class="progress">
+              <div style="width:96%"></div>
+            </div>
+
+            <button
+              class="match-button"
+              onclick="sendLike('Emma')"
+            >
+              💘 Send Like
+            </button>
+
+          </div>
+        </article>
+
+
+        <!-- Profile 6 -->
+        <article
+          class="profile-card"
+          data-category="foodie"
+          data-name="Daniel"
+        >
+
+          <div class="card-image red-gradient">
+            <div class="avatar">👨🏻‍🍳</div>
+
+            <span class="verified">✓ Verified-ish</span>
+
+            <button
+              class="heart-button"
+              onclick="likeProfile(this, 'Daniel')"
+              aria-label="Like Daniel"
+            >
+              ♡
+            </button>
+          </div>
+
+          <div class="card-body">
+
+            <div class="name-row">
+              <h3>Daniel, 28</h3>
+              <span>📍 6 km</span>
+            </div>
+
+            <p class="job">🍳 Breakfast Specialist</p>
+
+            <p class="bio">
+              I make excellent pancakes and questionable life decisions.
+            </p>
+
+            <div class="tags">
+              <span>🍳 Cooking</span>
+              <span>🍕 Pizza</span>
+              <span>☕ Coffee</span>
+            </div>
+
+            <div class="match-row">
+              <span>🔥 Match potential</span>
+              <strong>89%</strong>
+            </div>
+
+            <div class="progress">
+              <div style="width:89%"></div>
+            </div>
+
+            <button
+              class="match-button"
+              onclick="sendLike('Daniel')"
+            >
+              💘 Send Like
+            </button>
+
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Funny Compatibility -->
+    <section class="compatibility-section" id="matches">
+
+      <div class="compatibility-box">
+
+        <div class="emoji-big">🧪❤️</div>
+
+        <span class="section-label">THE TOTALLY REAL ALGORITHM</span>
+
+        <h2>How compatible are you?</h2>
+
+        <p>
+          Answer three extremely scientific questions and we'll
+          calculate your romantic destiny.
+        </p>
+
+        <div class="quiz" id="quiz">
+
+          <div class="quiz-question active-question" data-question="1">
+
+            <h3>1. Someone steals your fries. What do you do?</h3>
+
+            <div class="quiz-options">
+              <button onclick="answerQuiz(1, 10)">Cry dramatically 😭</button>
+              <button onclick="answerQuiz(1, 30)">Steal theirs 😈</button>
+              <button onclick="answerQuiz(1, 50)">Order another portion 🍟</button>
+            </div>
+
+          </div>
+
+          <div class="quiz-question" data-question="2">
+
+            <h3>2. Your ideal Friday night?</h3>
+
+            <div class="quiz-options">
+              <button onclick="answerQuiz(2, 20)">Netflix 🎬</button>
+              <button onclick="answerQuiz(2, 40)">Party 🎉</button>
+              <button onclick="answerQuiz(2, 60)">Sleep 😴</button>
+            </div>
+
+          </div>
+
+          <div class="quiz-question" data-question="3">
+
+            <h3>3. Pick your soulmate's most important quality.</h3>
+
+            <div class="quiz-options">
+              <button onclick="answerQuiz(3, 20)">Funny 😂</button>
+              <button onclick="answerQuiz(3, 40)">Kind ❤️</button>
+              <button onclick="answerQuiz(3, 60)">Shares food 🍕</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="quizResult" class="quiz-result">
+          <div class="result-heart">💖</div>
+          <h3>Your result is loading...</h3>
+          <p>Please answer the questions above.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Funny messages -->
+    <section class="section">
+
+      <div class="section-heading centered">
+
+        <div>
+          <span class="section-label">LOVE STATUS</span>
+          <h2>Important dating statistics 📊</h2>
+        </div>
+
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="fun-stat">
+          <div>🍕</div>
+          <strong>84%</strong>
+          <p>Would cancel a date for pizza.</p>
+        </div>
+
+        <div class="fun-stat">
+          <div>👻</div>
+          <strong>63%</strong>
+          <p>Have been ghosted by someone.</p>
+        </div>
+
+        <div class="fun-stat">
+          <div>😂</div>
+          <strong>91%</strong>
+          <p>Want someone who makes them laugh.</p>
+        </div>
+
+        <div class="fun-stat">
+          <div>😴</div>
+          <strong>78%</strong>
+          <p>Prefer sleeping over texting.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta-section">
+
+      <div class="cta-content">
+
+        <div class="cta-emoji">💌</div>
+
+        <h2>Still single?</h2>
+
+        <p>
+          Don't worry. Your Wi-Fi is still connected.
+          There is hope.
+        </p>
+
+        <button class="primary-button" onclick="randomMatch()">
+          Find Someone Random 🎲
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer id="about">
+
+    <div class="footer-container">
+
+      <div class="footer-brand">
+
+        <a href="#" class="logo">
+          Love<span>.exe</span> ❤️
+        </a>
+
+        <p>
+          Where questionable algorithms meet questionable
+          romantic decisions.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <div>
+          <h4>Explore</h4>
+          <a href="#discover">Discover</a>
+          <a href="#matches">Compatibility</a>
+          <a href="#about">About</a>
+        </div>
+
+        <div>
+          <h4>Disclaimer</h4>
+          <p>🚨 This website is a fictional demo.</p>
+          <p>No actual matchmaking occurs.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="developer-credit">
+
+      <p>
+        Built with ❤️ & questionable logic by
+        <strong>MD ATIQUL ISLAM (Atik)</strong>
+      </p>
+
+      <a href="mailto:atiksocial123@gmail.com">
+        ✉️ atiksocial123@gmail.com
+      </a>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Love.exe — All fictional. All fun. 😂
+    </div>
+
+  </footer>
+
+
+  <!-- Toast -->
+  <div id="toast" class="toast">
+    <span id="toastIcon">💖</span>
+    <div>
+      <strong id="toastTitle">Success!</strong>
+      <p id="toastMessage">Something happened.</p>
+    </div>
+    <button onclick="hideToast()">×</button>
+  </div>
+
+
+  <!-- Match Modal -->
+  <div class="modal-overlay" id="matchModal">
+
+    <div class="match-modal">
+
+      <button class="close-modal" onclick="closeModal()">×</button>
+
+      <div class="confetti">🎉 💕 🎉</div>
+
+      <div class="match-heart">
+        💖
+      </div>
+
+      <span class="section-label">IT'S A MATCH!</span>
+
+      <h2 id="matchName">You found someone!</h2>
+
+      <p id="matchMessage">
+        The algorithm has decided that you two should probably talk.
+      </p>
+
+      <div class="match-percentage">
+        <strong id="matchPercentage">97%</strong>
+        <span>Totally scientific compatibility</span>
+      </div>
+
+      <button
+        class="primary-button"
+        onclick="startChat()"
+      >
+        💬 Start Fake Conversation
+      </button>
+
+      <button
+        class="text-button"
+        onclick="closeModal()"
+      >
+        Maybe later
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
